@@ -1,0 +1,94 @@
+---
+yaml_version: 3
+pkg_version: 1.0.0
+pkg_vendor: RealThread
+pkg_type: Board_Support_Packages
+board:
+  name: STM32H750-ARMFLY-H7-TOOL
+  version: Rev.A
+  vendor: ARMFLY
+  description_zh: H7-TOOL 的最终目标为单片机工程师提供一款实用的多功能开发调试工具。
+  description_en: The ultimate goal of H7-Tool is to provide a practical multi-functional development and debugging TOOL for SCM engineers.
+  small_image: documents/images/board_small.jpg
+  large_image: documents/images/board_large.jpg
+  sale_contact_cn: http://www.armbbs.cn/
+  sale_contact_global: http://www.armbbs.cn/
+  buy_url_cn: https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-18210351026.2.2f0416e8MHJvps&id=602704490583
+  buy_url_global: https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-18210351026.2.2f0416e8MHJvps&id=602704490583
+  price_cn: 538.00 CNY
+  price_global: 82.00 USD
+  debugger: ST-LINk
+  debug_interface: SWD
+  emulator_machine: ''
+chip:
+  device_vendor: STMicroelectronics
+  family_name: STM32
+  series_name: STM32H7
+  sub_series_name: STM32H750
+  chip_name: STM32H750IBKx
+  rx_name: PA3
+  tx_name: PA2
+  clock_source: HSE
+  source_freq: '25000000'
+  target_freq: '480000000'
+  uart_name: UART2
+docs:
+- file: documents/manuals/RM0433.pdf
+  title: Reference manual
+  category: manual
+- file: documents/sheet/DS12556.pdf
+  title: STM32H750 Datasheet
+  category: sheet
+features:
+- "MCU: STM32H750IBK6 (128K Flash, 1M SRAM, 400MHz)"
+- "QSPI Flash, W25Q256, 32M bytes"
+- "eMMC, 8bit bus, 4GB"
+- "Serial EEPROM, 2KB"
+- "Front end of dual-channel ADC oscilloscope (AC/DC coupling, hardware gain 8 gears, software switching)"
+- "Ethernet PHY: LAN8720A"
+- "12 GPIO extensions, including: UART, SPI, I2C, PWM output, encoder input"
+- "1 RS485, 1 RS232, 1 CAN interface, 1 TTL serial port"
+- "SDIO WIFI module (ESP32-S, Bluetooth WIFI in One, both serial port and SDIO supported on hardware)"
+- "Active buzzer"
+- "Two buttons and one indicator light"
+- "SPI TFT color screen (1.3-inch IPS, resolution 240*240)"
+features_zh:
+- 处理器 STM32H750IBK6（128K Flash，1M SRAM，主频 400MHz）
+- QSPI Flash， W25Q256，容量 32M 字节
+- eMMC，8bit 总线,容量 4GB
+- 串行 EEPROM，容量 2KB
+- 双路 ADC 示波器前端（AC/DC 耦合, 硬件增益 8 档，软件切换）
+- 以太网 PHY ：LAN8720A
+- 12 个 GPIO 扩展，包含：UART、SPI、I2C、PWM 输出、编码器输入
+- 1 个 RS485、1 个 RS232、1 个 CAN 接口、1 个 TTL 串口
+- SDIO WIFI 模块（ESP32-S，蓝牙 WiFi 二合一，硬件支持串口和 SDIO 两种方式）
+- 有源蜂鸣器
+- 按钮 2 个，指示灯 1 个
+- SPI TFT 彩屏（1.3 寸 IPS，分辨率 240*240）
+template_projects:
+- project_name: stm32H750_armfly_h7_tool_blink_led
+  project_description: creat this peoject if user choose rt-thread project
+  project_type: rt-thread|@full|@latest
+  builtin_files:
+  - source_path_offset: default_project_0
+    target_path_offset: ''
+    files_and_folders:
+    - "*"
+  external_files:
+  - files_and_folders:
+    - components
+    - include
+    - libcpu/arm
+    - libcpu/Kconfig
+    - libcpu/SConscript
+    - src
+    - tools
+    - Kconfig
+    - LICENSE
+    package_name: RT-Thread
+    package_type: RT-Thread_Source_Code
+    package_vendor: ''
+    package_version: latest
+    source_path_offset: rt-thread
+    target_path_offset: rt-thread
+example_projects: []
