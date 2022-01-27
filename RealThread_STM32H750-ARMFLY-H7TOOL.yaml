@@ -1,6 +1,6 @@
 ---
 yaml_version: 3
-pkg_version: 1.0.1
+pkg_version: 1.0.2
 pkg_vendor: RealThread
 pkg_type: Board_Support_Packages
 board:
@@ -90,5 +90,30 @@ template_projects:
     package_vendor: ''
     package_version: latest
     source_path_offset: rt-thread
+    target_path_offset: rt-thread
+- project_name: stm32H750_armfly_h7tool_blink_led
+  project_description: creat this peoject if user choose rt-thread project
+  project_type: rt-thread|@full|@4.0.5
+  builtin_files:
+  - source_path_offset: default_project_0
+    target_path_offset: ''
+    files_and_folders:
+    - "*"
+  external_files:
+  - files_and_folders:
+    - components
+    - include
+    - libcpu/arm
+    - libcpu/Kconfig
+    - libcpu/SConscript
+    - src
+    - tools
+    - Kconfig
+    - LICENSE
+    package_name: RT-Thread
+    package_type: RT-Thread_Source_Code
+    package_vendor: ''
+    package_version: 4.0.5
+    source_path_offset: ''
     target_path_offset: rt-thread
 example_projects: []
